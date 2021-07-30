@@ -1,6 +1,8 @@
 from django.urls import path
 from sodp.requestdemo.views import DemoFormView
 
+app_name = "requestdemo"
+
 urlpatterns = [
-     path( "", DemoFormView.as_view(), name = 'demo') 
+     path( "newrequestdemo/", DemoFormView.as_view(), name = 'demo') 
 ]

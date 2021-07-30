@@ -11,7 +11,6 @@ urlpatterns = [
     path(
         "about/", TemplateView.as_view(template_name="pages/about.html"), name="about"
     ),
-    path('demo/', include('sodp.requestdemo.urls')),
     path(
         "thanks/", TemplateView.as_view(template_name="pages/thanks.html"), name="thanks"
     ),
@@ -31,6 +30,7 @@ urlpatterns = [
     path(settings.ADMIN_URL, admin.site.urls),
     # User management
     path("reports/", include("sodp.reports.urls", namespace = "reports")),
+    path("requestdemo/", include("sodp.requestdemo.urls", namespace = "requestdemo")),
     path("faqs/", include("sodp.faqs.urls", namespace = "faqs")),
     path("users/", include("sodp.users.urls", namespace="users")),
     path("accounts/", include("allauth.urls")),

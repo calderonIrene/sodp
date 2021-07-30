@@ -14,6 +14,7 @@ class DemoFormView(FormView):
     success_url = '/thanks/'
 
     def form_valid(self, form):
+        print(self.email)
         message = get_template("emails/demoRequest.html").render({
             'email': form.cleaned_data.get('email')
         })
@@ -21,7 +22,7 @@ class DemoFormView(FormView):
             "Demo Request",
             message,
             form.cleaned_data.get('email'),
-           to=['calderonpochirene@gmail.com']
+           to=['settings.EMAIL_FROM']
         )
         mail.content_subtype = "html"
         mail.send()
