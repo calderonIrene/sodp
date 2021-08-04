@@ -23,8 +23,8 @@ class User(AbstractUser):
     def get_absolute_url(self):
         """Get url for user's detail view.
 
-        Returns:
-            str: URL for user detail.
+            Returns:
+                str: URL for user detail.
 
         """
         return reverse("users:detail", kwargs={"username": self.username})
